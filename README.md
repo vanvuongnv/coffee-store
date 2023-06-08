@@ -35,8 +35,8 @@ dotnet watch
 ```
 - Open your browser, now you can access the websites via https://localhost:5070/
 
-## You might also want to explore:
+## you might also want to explore:
 - https://localhost:5070/swagger for all the REST API document of the service.
-- http://localhost:5070/categories list all categories
-- http://localhost:5070/categories/create-category create category
-- http://localhost:5070/categories/edit-category/{id} edit category
+- https://localhost:5070/categories list all categories
+- https://localhost:5070/categories/create-category create category
+- https://localhost:5070/categories/edit-category/{id} edit category
