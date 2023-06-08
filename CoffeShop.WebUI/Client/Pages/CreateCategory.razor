@@ -1,0 +1,43 @@
+﻿@page "/create-category"
+
+@using CoffeShop.WebUI.Shared.Commands
+@using CoffeShop.WebUI.Shared.Dtos
+@using CoffeShop.WebUI.Client.Services
+@using CoffeShop.WebUI.Client.Components
+@inject IDataService DataService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create Category</PageTitle>
+@if (hasError)
+{
+    <p>
+        Internal server error
+    </p>
+}
+
+<CategoryForm Model="Command" SubmitAction="HandleSubmit" />
+
+@code {
+        private CategoryCommand? Command { get; set; }
+        private bool hasError { get; set; }
+
+        private async Task HandleSubmit()
+        {
+            var response = await DataService.CreateCategoryAsync(Command);
+            if (response is not null)
+            {
+                NavigationManager.NavigateTo("/categories");
+            }
+            else
+            {
+                hasError = true;
+            }
+        }
+
+        protected override void OnInitialized()
+        {
+            Command = new CategoryCommand();
+        }
+
+    }
+

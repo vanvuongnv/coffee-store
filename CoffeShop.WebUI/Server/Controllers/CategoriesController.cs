@@ -72,7 +72,7 @@ namespace CoffeShop.WebUI.Server.Controllers
 
             if (result)
             {
-                return CreatedAtAction(nameof(GetByIdAsync), new { id = category.Id }, category);
+                return new ObjectResult(category) { StatusCode = StatusCodes.Status201Created };
             }
 
             return BadRequest();

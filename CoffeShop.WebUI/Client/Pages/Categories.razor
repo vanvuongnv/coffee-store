@@ -1,0 +1,50 @@
+﻿@page "/categories"
+@using CoffeShop.WebUI.Shared.Dtos
+@using CoffeShop.WebUI.Client.Services
+@inject IDataService DataService
+
+<PageTitle>List Category</PageTitle>
+
+<h1>List Category</h1>
+
+<NavLink class="btn btn-outline-primary" href="/create-category">
+    Create
+</NavLink>
+@if (items is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in items)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.CategoryName</td>
+                    <td>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<CategoryDto>? items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = await DataService.GetCategoriesAsync();
+    }
+}
+

@@ -12,9 +12,11 @@
   <ItemGroup>
     <None Remove="Dtos\" />
     <None Remove="Commands\" />
+    <None Remove="Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dtos\" />
     <Folder Include="Commands\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 </Project>

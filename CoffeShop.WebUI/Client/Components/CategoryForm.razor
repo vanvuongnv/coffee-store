@@ -1,0 +1,56 @@
+﻿@using CoffeShop.WebUI.Shared.Commands
+@implements IDisposable
+
+<EditForm Model="@Model" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mb-3">
+        <label class="form-label">
+            Category
+        </label>
+        <InputText @bind-Value="Model.CategoryName" class="form-control" />
+        <ValidationMessage For="() => Model.CategoryName" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+
+@code {
+    [Parameter]
+    public CategoryCommand? Model { get; set; }
+
+    [Parameter]
+    public EventCallback SubmitAction { get; set; }
+    private ValidationMessageStore? messageStore;
+    private EditContext? editContext;
+
+
+    private async Task HandleSubmit()
+    {
+        await SubmitAction.InvokeAsync();
+    }
+
+    protected override void OnInitialized()
+    {
+        editContext = new(Model);
+        editContext.OnValidationRequested += HandleValidationRequested;
+        messageStore = new(editContext);
+    }
+
+    private void HandleValidationRequested(object? sender, ValidationRequestedEventArgs args)
+    {
+        messageStore?.Clear();
+
+        // Custom validation logic
+    }
+
+    public void Dispose()
+    {
+        if (editContext is not null)
+        {
+            editContext.OnValidationRequested -= HandleValidationRequested;
+        }
+    }
+
+}
+
