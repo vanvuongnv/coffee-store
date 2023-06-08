@@ -22,14 +22,21 @@ CoffeShop.WebUI
 -----Dtos: data transfer object are objects that carry data between Server and Client
 ```
 ## how to run
-- setup local database
+- Setup local database
 - In appsettings.json of CoffeShop.WebUI.Server Project, change the database connection to your server
-- migration database: 
+- Migration database: 
 ```
 dotnet ef database update
 ```
-- run project
-- Open your browser, now you can access the websites via https://localhost:7248/
+- Run project
+```
+cd /CoffeShop.WebUI/Server
+dotnet watch
+```
+- Open your browser, now you can access the websites via https://localhost:5070/
 
 ## You might also want to explore:
-- https://localhost:7248/swagger for all the REST API document of the service.
+- https://localhost:5070/swagger for all the REST API document of the service.
+- http://localhost:5070/categories list all categories
+- http://localhost:5070/categories/create-category create category
+- http://localhost:5070/categories/edit-category/{id} edit category
