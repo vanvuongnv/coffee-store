@@ -10,6 +10,13 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,4 +25,20 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <None Remove="Data\" />
+    <None Remove="Data\Entities\" />
+    <None Remove="Controllers\" />
+    <None Remove="Infrastructure\" />
+    <None Remove="Infrastructure\Abstract\" />
+    <None Remove="Infrastructure\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Data\Entities\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\Abstract\" />
+    <Folder Include="Infrastructure\Services\" />
+  </ItemGroup>
 </Project>
