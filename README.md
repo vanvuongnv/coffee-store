@@ -32,4 +32,4 @@ dotnet ef database update
 - Open your browser, now you can access the websites via https://localhost:7248/
 
 ## You might also want to explore:
-- https://localhost:7248/swagger for all the REST API document of the service
+- https://localhost:7248/swagger for all the REST API document of the service.
