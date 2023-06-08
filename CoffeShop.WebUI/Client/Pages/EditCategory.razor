@@ -1,0 +1,52 @@
+﻿@page "/edit-category/{Id:int}"
+
+@using CoffeShop.WebUI.Shared.Dtos
+@using CoffeShop.WebUI.Client.Services
+@using CoffeShop.WebUI.Shared.Commands
+@using CoffeShop.WebUI.Client.Components
+
+@inject IDataService DataService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit Category</PageTitle>
+
+@if (hasError)
+{
+    <p>
+        Internal server error
+    </p>
+}
+
+<CategoryForm Model="Command" SubmitAction="HandleSubmit" />
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private bool hasError { get; set; }
+
+    private CategoryCommand? Command { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var category = await DataService.GetCategoryAsync(Id);
+        if (category is null)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        Command = new CategoryCommand() { CategoryName = category.CategoryName };
+    }
+
+    private async Task HandleSubmit()
+    {
+        var response = await DataService.UpdateCategoryAsync(Id, Command);
+        if (response)
+        {
+            NavigationManager.NavigateTo("/categories");
+        }
+        else
+        {
+            hasError = true;
+        }
+    }
+}
+
