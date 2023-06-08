@@ -1,4 +1,6 @@
 ﻿using System;
+using CoffeShop.WebUI.Shared.Dtos;
+
 namespace CoffeShop.WebUI.Shared.Common
 {
 	public static class ApiUrls
@@ -17,6 +19,8 @@ namespace CoffeShop.WebUI.Shared.Common
 		public static class ProductUrls
 		{
             private const string BaseUrl = "api/Products";
+
+			public static string GetProducts(UrlQuery urlQuery) => $"{BaseUrl}?page={urlQuery.Page}&pageSize={urlQuery.PageSize}&keyword={urlQuery.Keyword}";
 
         }
     }

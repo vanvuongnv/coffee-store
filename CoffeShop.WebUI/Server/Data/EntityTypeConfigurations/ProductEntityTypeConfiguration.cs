@@ -40,7 +40,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 1,
                     CategoryId = 1,
                     ProductName = "Vietnamese Coffee",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 29,
                     UnitsInStock = 100
                 },
@@ -49,7 +49,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 2,
                     CategoryId = 1,
                     ProductName = "Vietnamese White Coffee",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 29,
                     UnitsInStock = 99
                 },
@@ -58,7 +58,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 3,
                     CategoryId = 1,
                     ProductName = "Vietnamese Milk Coffee",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 29,
                     UnitsInStock = 74
                 },
@@ -67,7 +67,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 4,
                     CategoryId = 2,
                     ProductName = "Espresso",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 35,
                     UnitsInStock = 47
                 },
@@ -76,7 +76,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 5,
                     CategoryId = 2,
                     ProductName = "Condensed Milk Espresso",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 35,
                     UnitsInStock = 51
                 },
@@ -85,7 +85,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 6,
                     CategoryId = 2,
                     ProductName = "Americano",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 39,
                     UnitsInStock = 63
                 },
@@ -94,7 +94,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 7,
                     CategoryId = 2,
                     ProductName = "Cappuccino",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 45,
                     UnitsInStock = 56
                 },
@@ -103,7 +103,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 8,
                     CategoryId = 2,
                     ProductName = "Late",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 45,
                     UnitsInStock = 77
                 },
@@ -112,7 +112,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 9,
                     CategoryId = 2,
                     ProductName = "Mocha",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 49,
                     UnitsInStock = 99
                 },
@@ -121,7 +121,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 10,
                     CategoryId = 2,
                     ProductName = "Caramel Macchiato",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 55,
                     UnitsInStock = 88
                 },
@@ -130,7 +130,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 11,
                     CategoryId = 3,
                     ProductName = "Black Tea",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 35,
                     UnitsInStock = 11
                 },
@@ -139,7 +139,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 12,
                     CategoryId = 3,
                     ProductName = "Flavored Tea",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 35,
                     UnitsInStock = 22
                 },
@@ -148,7 +148,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 13,
                     CategoryId = 3,
                     ProductName = "Black Tea Macchiato",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 38,
                     UnitsInStock = 66
                 },
@@ -157,7 +157,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 14,
                     CategoryId = 3,
                     ProductName = "Raspberry Macchiato",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 42,
                     UnitsInStock = 22
                 },
@@ -166,7 +166,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 15,
                     CategoryId = 3,
                     ProductName = "Peach Tea Mania",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 42,
                     UnitsInStock = 33
                 },
@@ -175,7 +175,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 16,
                     CategoryId = 3,
                     ProductName = "Matcha Late",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 55,
                     UnitsInStock = 55
                 },
@@ -184,7 +184,7 @@ namespace CoffeShop.WebUI.Server.Data.EntityTypeConfigurations
                     Id = 17,
                     CategoryId = 3,
                     ProductName = "Match Ice Blended",
-                    ImageUrl = "",
+                    ImageUrl = "/images/coffee.jpeg",
                     Price = 59,
                     UnitsInStock = 44
                 });

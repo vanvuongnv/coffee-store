@@ -1,0 +1,25 @@
+﻿@using CoffeShop.WebUI.Shared.Dtos
+
+<div class="card">
+    <img src="@Product.ImageUrl" class="card-img-top" alt="@Product.ProductName">
+    <div class="card-body">
+        <h5 class="card-title">@Product.ProductName</h5>
+        <p class="card-text">
+            <a href="#" class="card-link">
+                @Product.CategoryName
+            </a>
+            <br />
+            <code>
+                @Product.Price.ToString("c")
+            </code>
+        </p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public ProductDto Product { get; set; }
+}
+

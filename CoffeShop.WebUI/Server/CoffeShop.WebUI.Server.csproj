@@ -40,5 +40,11 @@
     <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\Abstract\" />
     <Folder Include="Infrastructure\Services\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\images\" />
   </ItemGroup>
 </Project>

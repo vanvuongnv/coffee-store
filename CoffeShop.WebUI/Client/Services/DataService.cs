@@ -38,6 +38,11 @@ namespace CoffeShop.WebUI.Client.Services
         {
             return await _httpService.PutAsync(ApiUrls.CategoryUrls.UpdateCategory(id), command);
         }
+
+        public async Task<PaginationResponse<ProductDto>?> GetProducts(UrlQuery urlQuery)
+        {
+            return await _httpService.GetAsync<PaginationResponse<ProductDto>>(ApiUrls.ProductUrls.GetProducts(urlQuery));
+        }
     }
 }
 

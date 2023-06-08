@@ -1,0 +1,66 @@
+﻿@page "/store"
+
+@using CoffeShop.WebUI.Shared.Dtos
+@using CoffeShop.WebUI.Client.Services
+@using CoffeShop.WebUI.Client.Components
+
+@inject IDataService DataService
+
+<PageTitle>Your Store</PageTitle>
+
+@if (Products is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">
+        <i class="bi bi-search"></i>
+    </span>
+    <InputText type="search" placeholder="Search name" @bind-Value="UrlQuery.Keyword" class="form-control" />
+    <button class="btn btn-outline-secondary" type="button" @onclick="() => LoadProduct()">Apply</button>
+</div>
+    <div class="row">
+        @foreach (var item in Products)
+        {
+            <div class="col-12 col-md-3 mb-3">
+                <ProductItem Product="item" />
+            </div>
+        }
+        <Pagination MetaData="PagingInfo" Spread="2" SelectedPage="LoadProduct" />
+    </div>
+}
+
+@code {
+    private List<ProductDto>? Products { get; set; }
+    private PagingInfo PagingInfo { get; set; } = new PagingInfo();
+    private UrlQuery UrlQuery { get; set; }
+
+    private async Task LoadProduct(int page = 1)
+    {
+        UrlQuery.Page = page;
+
+        var response = await DataService.GetProducts(UrlQuery);
+        Products = response.Items;
+        PagingInfo = new PagingInfo()
+        {
+            CurrentPage = UrlQuery.Page,
+            PageSize = UrlQuery.PageSize,
+            TotalCount = response.Total
+        };
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        UrlQuery = new UrlQuery()
+        {
+            Page = 1,
+            PageSize = 8,
+            Keyword = ""
+        };
+
+        await LoadProduct();
+    }
+}
+

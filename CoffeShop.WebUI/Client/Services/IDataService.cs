@@ -1,5 +1,6 @@
 ﻿using System;
 using CoffeShop.WebUI.Shared.Commands;
+using CoffeShop.WebUI.Shared.Common;
 using CoffeShop.WebUI.Shared.Dtos;
 
 namespace CoffeShop.WebUI.Client.Services
@@ -11,6 +12,8 @@ namespace CoffeShop.WebUI.Client.Services
 		Task<CategoryDto?> CreateCategoryAsync(CategoryCommand command);
 		Task<bool> UpdateCategoryAsync(int id, CategoryCommand command);
 		Task<bool> DeleteCategoryAsync(int id);
+
+		Task<PaginationResponse<ProductDto>?> GetProducts(UrlQuery urlQuery);
 	}
 }
 
