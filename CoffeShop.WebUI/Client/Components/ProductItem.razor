@@ -1,5 +1,6 @@
 ﻿@using CoffeShop.WebUI.Shared.Dtos
-
+@using CoffeShop.WebUI.Client.Services
+@inject ICartService CartService
 <div class="card">
     <img src="@Product.ImageUrl" class="card-img-top" alt="@Product.ProductName">
     <div class="card-body">
@@ -13,7 +14,7 @@
                 @Product.Price.ToString("c")
             </code>
         </p>
-        <a href="#" class="btn btn-primary">Add to cart</a>
+        <button class="btn btn-primary" @onclick="() => AddToCart(Product.Id)">Add to cart</button>
     </div>
 </div>
 
@@ -21,5 +22,10 @@
 
     [Parameter]
     public ProductDto Product { get; set; }
+
+    private async Task AddToCart(int productId) {
+        await CartService.AddToCart(productId);
+        Console.WriteLine(productId);
+    }
 }
 
